@@ -9,11 +9,6 @@ public:
      * QUESTIONS:
      * 1. This pointer will point to data on the heap.
      *    What is the rule of 3?
-     * ANSWERS:
-     * 1. A class which uses dynamic memory must:
-     *      a. implement a copy constructor
-     *      b. implement an assignment operator
-     *      c. implement a destructor
      */
     int *pointer_to_variable;
 
@@ -199,18 +194,6 @@ public:
      * 1. Why do we need this function?
      * 2. What does each line do, and why?
      * 3. When does this function get called?
-     * ANSWERS:
-     * 1. Since we could use heap memory, we have to de-allocate
-     *    the space to prevent a memory leak.
-     * 2. The 'delete' line "gets rid of" the data that
-     *    'pointer_to_variable' points to. After that line
-     *    finishes, the 'pointer_to_variable' pointer still
-     *    points to that location, even if we aren't using the
-     *    space, so we set it to 'nullptr'.
-     * 3. When we use 'delete' or if a variable's lifetime expires.
-     *    For example, if a local variable is declared in a function,
-     *    the destructor is automatically called at the end of the
-     *    function.
      */
     ~Sample()
     {
